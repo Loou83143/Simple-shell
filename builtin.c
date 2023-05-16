@@ -30,9 +30,10 @@ int _myexit(info_t *info)
 
 /**
  * _mycd - changes the current directory of the process
- * A constant function prototype.
- *  Return: Always 0
- */
+* @info: The Structure containing potential arguments can be used to
+* maintain a constant function prototype.
+* Return: Always 0
+*/
 int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];

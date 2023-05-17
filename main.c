@@ -17,7 +17,7 @@ int main(int ac, char **av)
 		: "=r" (ef)
 		: "r" (ef));
 
-	if (cd == 2)
+	if (ac == 2)
 	{
 		ef = open(av[1], O_RDONLY);
 		if (ef == -1)

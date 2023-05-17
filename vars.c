@@ -10,7 +10,7 @@
  */
 int is_chain(info_t *info, char *buf, size_t *p)
 {
-	size_t j = *p;
+	size_t c = *p;
 
 	if (buf[c] == '|' && buf[c + 1] == '|')
 	{
@@ -45,15 +45,15 @@ int is_chain(info_t *info, char *buf, size_t *p)
  *
  * Return: Void
  */
-void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
+void check_chain(info_t *info, char *buf, size_t *p, size_t a, size_t len)
 {
-	size_t j = *p;
+	size_t c = *p;
 
 	if (info->cmd_buf_type == CMD_AND)
 	{
 		if (info->status)
 		{
-			buf[i] = 0;
+			buf[a] = 0;
 			c = len;
 		}
 	}
@@ -77,7 +77,7 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
  */
 int replace_alias(info_t *info)
 {
-	int i;
+	int a;
 	list_t *node;
 	char *p;
 
@@ -129,7 +129,7 @@ int replace_vars(info_t *info)
 		node = node_starts_with(info->env, &info->argv[a][1], '=');
 		if (node)
 		{
-			replace_string(&(info->argv[i]),
+			replace_string(&(info->argv[a]),
 				_strdup(_strchr(node->str, '=') + 1));
 			continue;
 		}

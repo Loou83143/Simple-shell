@@ -6,14 +6,14 @@
  *
  * Return: the size of list
  */
-size_t list_len(const list_t *h)
+size_t list_len(const list_t *b)
 {
 	size_t a = 0;
 
 	while (b)
 	{
 		b = b->next;
-		i++;
+		a++;
 	}
 	return (a);
 }
@@ -61,7 +61,7 @@ char **list_to_strings(list_t *head)
  *
  * Return: the size of list
  */
-size_t print_list(const list_t *h)
+size_t print_list(const list_t *b)
 {
 	size_t a = 0;
 
